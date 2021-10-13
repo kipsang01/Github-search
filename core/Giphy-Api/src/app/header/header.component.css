@@ -2,3 +2,32 @@
     color: blanchedalmond;
     background-color: black;
 }
+.nav-item{
+    margin:5px;
+}
+.nav-link{
+    color: white;
+    border-bottom: 5px solid rebeccapurple;
+}
+.nav-link a{
+    color: white;
+}
+.nav-link:hover{
+    background-color: #b516c4;
+    
+}
+.btn-upload{
+    background-color: rgb(93, 62, 231);
+    margin: 5px;
+    border: none;
+}
+.profile{
+    margin-left: 10px;
+    width: 15%;
+    background-color: rgba(129, 127, 127, 0.8);
+}
+.login{
+    background-color: rgba(129, 127, 127, 0.8);
+    border: none;
+    width: 90%;
+}

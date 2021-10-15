@@ -1,1 +1,16 @@
-<p>profile works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h2>{{user.login}}</h2>
+            <div class="image"><img [src]="user.avatar_url" alt="user profile"></div>
+        </div>
+        <div class="col-6">
+            <div class="details">
+                {{user.followers}} Followers
+                Following {{user.following}}
+                {{user.public_repos}} Repos<br>
+                <button><a [href]="user.html_url" target="_blank">profile in Github</a></button>
+            </div>
+        </div>
+    </div>
+</div>

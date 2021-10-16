@@ -7,10 +7,12 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class GithubService {
+  apiKey = environment.apiKey
+
 
   constructor(private http:HttpClient) { }
 
-  getUserProfile(){
-     return this.http.get('https://api.github.com/users/kipsang01?&Access_token=' + environment.apiKey)
+  getUserProfile(username:string){
+     return this.http.get(`https://api.github.com/users/${username}?Access_token:${this.apiKey}`)
   }                       
 }

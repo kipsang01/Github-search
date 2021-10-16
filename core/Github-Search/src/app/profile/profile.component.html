@@ -4,11 +4,11 @@
             <div class=" text-center m-auto">
                 <div class="image"><img [src]="user.avatar_url" alt="user profile"></div>
             </div>
-            <div class="details m-auto">
+            <div class="details">
                 <h2>{{user.name}}</h2>
-                <span class="bg-primary text-light m-1">{{user.followers}} Followers</span>
-                <span class="bg-success text-light m-1">Following {{user.following}}</span>
-                <span class="bg-info text-light m-1">{{user.public_repos}} Repos</span><br>
+                <span class="bg-primary text-light m-1 p-1">{{user.followers}} Followers</span>
+                <span class="bg-success text-light m-1 p-1">Following {{user.following}}</span>
+                <span class="bg-info text-light m-1 p-1">{{user.public_repos}} Repos</span><br>
                 <button class="bg-secondary m-1"><a [href]="user.html_url" target="_blank">viewprofile in Github</a></button>
             </div>
         </div>

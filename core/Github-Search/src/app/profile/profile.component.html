@@ -5,11 +5,24 @@
                 <div class="image"><img [src]="user.avatar_url" alt="user profile"></div>
             </div>
             <div class="details">
-                <h2>{{user.name}}</h2>
-                <span class="bg-primary text-light m-1 p-1">{{user.followers}} Followers</span>
-                <span class="bg-success text-light m-1 p-1">Following {{user.following}}</span>
-                <span class="bg-info text-light m-1 p-1">{{user.public_repos}} Repos</span><br>
-                <button class="bg-secondary m-1"><a [href]="user.html_url" target="_blank">viewprofile in Github</a></button>
+                <div class="card">
+                    <div class="card-header"><h2>{{user.name}}</h2></div>
+                    <div class="card-body">
+                        <span class="bg-primary text-light m-1 p-1">{{user.followers}} Followers</span>
+                        <span class="bg-success text-light m-1 p-1">Following {{user.following}}</span>
+                        <span class="bg-info text-light m-1 p-1">{{user.public_repos}} Repos</span><br>
+                        <ul class="list-group">
+                            <li class="list-group-item">Username: {{user.login}}</li>
+                            <li class="list-group-item" *ngIf = "user.bio">Bio: {{user.bio}}</li>
+                            <li class="list-group-item" *ngIf = "user.company">Company: {{user.company}}</li>
+                            <li class="list-group-item" *ngIf = "user.location">Location:{{user.location}}</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <button class="bg-secondary m-1"><a [href]="user.html_url" target="_blank">Viewprofile in Github</a></button>
+                        <button class="bg-info">View Repos</button>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="col-6">

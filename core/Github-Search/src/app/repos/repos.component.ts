@@ -1,5 +1,6 @@
+import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-
+import { GithubService } from '../github.service';
 
 @Component({
   selector: 'app-repos',
@@ -7,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./repos.component.css']
 })
 export class ReposComponent implements OnInit {
+  userRepos:any;
 
-  constructor() { }
+  @Input()repos:any;
+
+  constructor(githubservice:GithubService) { }
 
   ngOnInit(): void {
+    this.userRepos = this.repos;
+
   }
+  
+  //getUserRepos(){}
 
 }

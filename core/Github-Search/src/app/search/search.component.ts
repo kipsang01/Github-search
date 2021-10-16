@@ -8,7 +8,7 @@ import { GithubService } from '../github.service';
 })
 export class SearchComponent implements OnInit {
   userProfile:any;
- // searchinput:any;
+  repos:any;
   username!:string;
 
   constructor(private githubService:GithubService) { }
@@ -22,6 +22,10 @@ export class SearchComponent implements OnInit {
     this.githubService.getUserProfile(this.username).subscribe((response:any) => {
       console.log(response)
       this.userProfile = response;
+    })
+    this.githubService.getUserRepos(this.username).subscribe((data:any) => {
+      console.log(data)
+      this.repos = data
     })
   }
 

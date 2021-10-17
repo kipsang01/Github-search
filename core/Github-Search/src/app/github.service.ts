@@ -26,7 +26,13 @@ export class GithubService {
   getUserProfile(username:string){
      return this.http.get(`https://api.github.com/users/${username}?Access_token:${this.apiKey}`)
   }   
+
   getUserRepos(username:any){
       return this.http.get(`https://api.github.com/users/${username}/repos?Access_token:${this.apiKey}`)
-  }                    
+  }   
+  
+  getRepos(searchTerm:string){
+      return this.http.get(`https://api.github.com/search/${searchTerm}?Access_token:${this.apiKey}`)
+  }
+  
 }

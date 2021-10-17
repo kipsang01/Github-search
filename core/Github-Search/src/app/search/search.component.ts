@@ -8,8 +8,9 @@ import { GithubService } from '../github.service';
 })
 export class SearchComponent implements OnInit {
   userProfile:any;
-  repos:any;
+  repo:any;
   username!:string;
+  repository!:string;
 
   constructor(private githubService:GithubService) { }
 
@@ -18,15 +19,18 @@ export class SearchComponent implements OnInit {
   }
   getUserProfile(){
    // this.searchinput = data;
-   console.log(this.username)
+   //console.log(this.username)
     this.githubService.getUserProfile(this.username).subscribe((response:any) => {
       console.log(response)
       this.userProfile = response;
     })
-    // this.githubService.getUserRepos(this.username).subscribe((data:any) => {
-    //   console.log(data)
-    //   this.repos = data
-    // })
+    
+  }
+  getRepo(){
+    this.githubService.getRepos(this.repository).subscribe((data:any) => {
+       console.log(data)
+       this.repo = data
+     })
   }
 
 

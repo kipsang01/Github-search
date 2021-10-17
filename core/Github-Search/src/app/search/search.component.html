@@ -1,19 +1,19 @@
 <div class="container-fluid">
-    <div class="row">
+    <div class="row search">
         <div class="col-6 text-center">
             <div class="form1 m-3">
                 <form #searchinput = "ngForm" (submit) = "getUserProfile()">
-                    <input type="text" name="user" [(ngModel)]="username"  placeholder="Search Username">
-                    <button type="submit">search</button>
+                    <input type="text" name="user" [(ngModel)]="username"  placeholder="Search Username" class="p-3">
+                    <button type="submit" class="p-3">search</button>
                 </form>
             </div>
         </div>
         <div class="col-6 text-center">
             <div class="form2 m-3">
-                <!-- <form>
-                    <input type="text" placeholder="Search a Repository ">
-                    <button>search</button>
-                </form> -->
+                <form #searchrepo = "ngForm" (submit) = "getRepo()">
+                    <input type="text" name="repo" [(ngModel)]="repository"  placeholder="Search Repo" class="p-3">
+                    <button type="submit" class="p-3">search</button>
+                </form>
             </div>
         </div>
     </div>
@@ -21,7 +21,7 @@
         <app-profile [userProfile] = "userProfile"></app-profile>
         <!-- <app-repos [repos] = "repos"></app-repos>  -->
     </div>
-    <!-- <div class="row">
-        <app-repos></app-repos> 
-    </div> -->
+    <div class="repository" *ngIf = "repo">
+        <app-repository [repository] = "repository"></app-repository>
+    </div>
 </div>

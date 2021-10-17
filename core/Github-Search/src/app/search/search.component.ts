@@ -23,10 +23,10 @@ export class SearchComponent implements OnInit {
       console.log(response)
       this.userProfile = response;
     })
-    this.githubService.getUserRepos(this.username).subscribe((data:any) => {
-      console.log(data)
-      this.repos = data
-    })
+    // this.githubService.getUserRepos(this.username).subscribe((data:any) => {
+    //   console.log(data)
+    //   this.repos = data
+    // })
   }
 
 

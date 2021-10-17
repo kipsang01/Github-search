@@ -1,6 +1,10 @@
 <div class="container-fluid">
     <h1>Repositories</h1>
 <ul class="list-group">
-    <li class="list-group-item" *ngFor ="let repo of userRepos">{{repo | json}}</li>
+    <li class="list-group-item" *ngFor ="let repo of userRepos">
+         <h3>{{repo.name}}</h3>
+         <p>{{repo.description}}</p>
+         Language:{{repo.language}}  Forks: {{repo.forks}} <button><a [href]="repo.html_url" target="_blank">View</a></button>
+        </li>
   </ul>
 </div>

@@ -1,5 +1,6 @@
 <div class="container-fluid">
+    <h1>Repositories</h1>
 <ul class="list-group">
-    <li class="list-group-item" *ngFor ="let repo of userRepos">{{repo.id}}</li>
+    <li class="list-group-item" *ngFor ="let repo of userRepos">{{repo | json}}</li>
   </ul>
 </div>

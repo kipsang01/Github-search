@@ -20,7 +20,7 @@
                     </div>
                     <div class="card-footer">
                         <button class="bg-secondary m-1"><a [href]="user.html_url" target="_blank">Viewprofile in Github</a></button>
-                        <button class="bg-info">View Repos</button>
+                        <button class="bg-info" (click) = "getRepos(user.login)">View Repos</button>
                     </div>
                 </div>
             </div>

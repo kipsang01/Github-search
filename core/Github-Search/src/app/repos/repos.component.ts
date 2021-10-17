@@ -1,5 +1,6 @@
 import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { GithubService } from '../github.service';
 
 @Component({
@@ -8,14 +9,16 @@ import { GithubService } from '../github.service';
   styleUrls: ['./repos.component.css']
 })
 export class ReposComponent implements OnInit {
-  userRepos:any;
+  userRepos!:any[]
+ // user!:string;
 
-  @Input()repos:any;
+  //@Input()repos:any;
 
-  constructor(githubservice:GithubService) { }
+  constructor(private route:ActivatedRoute,private githubservice:GithubService) { }
 
   ngOnInit(): void {
-    this.userRepos = this.repos;
+     let user = this.route.snapshot.paramMap.get('user');
+   this.userRepos = this.githubservice.getUserRepos(user)
 
   }
   

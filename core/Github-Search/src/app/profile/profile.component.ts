@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,10 +12,14 @@ export class ProfileComponent implements OnInit {
   user:any;
   @Input()userProfile:any;
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
     this.user = this.userProfile
+  }
+
+  getRepos(user:string){
+    this.router.navigate(['/profile',user])
   }
 
 }

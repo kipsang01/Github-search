@@ -2,9 +2,15 @@
     <h1 class="text-center">Repositories</h1>
 <ul class="list-group w-75 m-auto">
     <li class="list-group-item" *ngFor ="let repo of userRepos">
-         <h3>{{repo.name}}</h3>
-         <p>{{repo.description}}</p>
-        <small> <strong>Language:</strong> {{repo.language}}<strong>Forks:</strong>{{repo.forks}} <button class="bg-success"><a [href]="repo.html_url" target="_blank">View</a></button></small>
-        </li>
+        <div class="repo d-flex">
+            <div class="name w-75">
+                <h3>{{repo.name}}</h3>
+                <p>{{repo.description}}</p>
+            </div>
+            <div class="details d-flex align-items-center">
+                <small> <strong class="m-1" *ngIf = "repo.language">Language:</strong> {{repo.language}}<strong class="m-1">Forks:</strong>{{repo.forks}} <button class="bg-success m-1"><a [href]="repo.html_url" target="_blank">View</a></button></small>
+            </div>
+        </div>
+         </li>
   </ul>
 </div>
